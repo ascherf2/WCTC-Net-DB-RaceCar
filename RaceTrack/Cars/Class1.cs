@@ -11,6 +11,10 @@ namespace RaceTrack.RaceTrack.Cars
     {
         public IceCreamTruck()
         {
+        }
+
+        public IceCreamTruck(IceCreamTruck iceCreamTruck)
+        {
             Name = "Ice Cream Truck";
             TopSpeed = 65;
         }

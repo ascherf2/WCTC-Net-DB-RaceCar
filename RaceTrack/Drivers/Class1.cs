@@ -1,38 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using RaceTrack.RaceTrack.Cars;
 
 namespace RaceTrack.RaceTrack.Drivers
-{
-    public abstract class IceCreamMan
     {
-        public string Name { get; set; }
-        public int SkillLevel { get; set; }
-        public RaceCar Car { get; set; }
+    public class IceCreamMan : Driver
+    {
+        public IceCreamMan(RaceCar car) : base(car)
+            {
+            Name = "Ice Cream Man";
+            SkillLevel = 4;
+            }
 
-        protected IceCreamMan(RaceCar car)
-        {
-            Car = car;
-        }
-
-        public virtual void Accelerate()
-        {
+        public override void Drive()
+            {
             Car.Accelerate(SkillLevel);
-        }
-        public virtual void StartEngine()
-        {
-            Car.StartEngine();
-        }
-        public virtual void Stop()
-        {
-            Car.Brake();
-        }
+            }
 
-        public abstract void Drive();
-
+        }
     }
-}
